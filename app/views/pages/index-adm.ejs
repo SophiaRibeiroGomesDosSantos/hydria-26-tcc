@@ -25,7 +25,7 @@
       <section class="admin-panel">
         <span class="stats-grid">
             <article class="stat-card highlighted">
-                <data value="150">150</data>
+                                <data value="<%= usuarios ? usuarios.length : 0 %>"><%= usuarios ? usuarios.length : 0 %></data>
                 <p>Usuários</p>
             </article>
 
@@ -54,25 +54,23 @@
                   <tr>
                       <th>Nome</th>
                       <th>Email</th>
-                      <th>Data de registro</th>
+                      <th>Ação</th>
                   </tr>
               </thead>
               <tbody>
-                  <tr>
-                      <td>Maria Silva</td>
-                      <td>maria.silva@email</td>
-                      <td>08-01-2025</td>
-                  </tr>
-                  <tr>
-                      <td>João Santos</td>
-                      <td>joão.santos@email</td>
-                      <td>15-03-2025</td>
-                  </tr>
-                  <tr>
-                      <td>Beatriz Oliveira</td>
-                      <td>beau.oliveira@email</td>
-                      <td>02-04-2025</td>
-                  </tr>
+                  <% if (usuarios && usuarios.length > 0) { %>
+                      <% usuarios.forEach(usuario => { %>
+                          <tr>
+                              <td><%= usuario.nome %></td>
+                              <td><%= usuario.email %></td>
+                              <td><a href="/adm/deletar-logico?id=<%= usuario.idUsuario %>" class="btn-02">excluir</a></td>
+                          </tr>
+                      <% }) %>
+                  <% } else { %>
+                      <tr>
+                          <td colspan="3">Nenhum usuário encontrado.</td>
+                      </tr>
+                  <% } %>
               </tbody>
           </table>
       </span>

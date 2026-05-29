@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/perfil-adm.css">
+    <title>Suporte Administrativo</title>
+</head>
+<body>
+    <%- include("../partial/header-adm") %>
+
+    <main class="container">
+        <article class="form-card profile-view-card">
+            <header>
+                <h1>SUPORTE ADMINISTRATIVO</h1>
+                <p class="subtitle">Canal para ajustes de acesso e dúvidas operacionais.</p>
+            </header>
+
+            <section id="profile-data-container">
+                <dl class="form-list">
+                    <section class="input-group">
+                        <dt>Email</dt>
+                        <dd class="display-value">suporte@seuprojeto.com</dd>
+                    </section>
+
+                    <section class="input-group">
+                        <dt>Telefone</dt>
+                        <dd class="display-value">(00) 00000-0000</dd>
+                    </section>
+
+                    <section class="input-group">
+                        <dt>Horário</dt>
+                        <dd class="display-value">Segunda a sexta, 08h às 18h</dd>
+                    </section>
+                </dl>
+            </section>
+        </article>
+    </main>
+
+    <%- include("../partial/footer") %>
+</body>
+</html>

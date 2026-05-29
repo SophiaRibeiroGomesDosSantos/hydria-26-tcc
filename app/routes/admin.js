@@ -1,35 +1,24 @@
 const express = require('express');
-const path = require('path');
 const router = express.Router();
 
-// Painel admin
 router.get('/painel', (req, res) => {
-    res.sendFile(path.join(__dirname, '../vistas/admin/paineladm.html'));
+    res.redirect('/adm');
 });
 
-// ONGs
-router.get('/painel', (req, res) => {
-    res.sendFile(path.join(__dirname, '../vistas/admin/paineladm.html'));
-});
-
-// ONGs
 router.get('/ongs', (req, res) => {
-    res.sendFile(path.join(__dirname, '../vistas/admin/ongs.html'));
+    res.redirect('/adm');
 });
 
-// Perfil admin
 router.get('/perfil', (req, res) => {
-    res.sendFile(path.join(__dirname, '../vistas/admin/perfiladm.html'));
+    res.redirect('/adm');
 });
 
-// Suporte
 router.get('/suporte', (req, res) => {
-    res.sendFile(path.join(__dirname, '../vistas/admin/suporte.html'));
+    res.redirect('/adm');
 });
 
-// Usuários
 router.get('/usuarios', (req, res) => {
-    res.sendFile(path.join(__dirname, '../vistas/admin/usuario.html'));
+    res.redirect('/adm/usuarios-adm');
 });
 
 module.exports = router;
