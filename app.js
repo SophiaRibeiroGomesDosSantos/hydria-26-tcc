@@ -16,7 +16,7 @@ app.use('/js', express.static(path.join(__dirname, 'app/public/js')));
 app.use('/partial', express.static(path.join(__dirname, 'app/views/partial')));
 
 // Middlewares
-app.use(express.static(path.join(__dirname, 'app/public')));
+app.use(express.static(path.join(__dirname, 'app', 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
