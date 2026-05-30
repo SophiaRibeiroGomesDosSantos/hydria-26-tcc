@@ -1,5 +1,12 @@
 
 <footer class="site-footer">
+	<style>
+		@media (max-width: 1023px) {
+			.site-footer {
+				display: none !important;
+			}
+		}
+	</style>
 	<section class="footer-inner-container">
         
 		<nav class="footer-links-nav" aria-label="Navegação secundária do rodapé">
@@ -9,7 +16,7 @@
 				<li><a href="/projetos">Projetos</a></li>
 				<li class="auth-stacked-item">
 					<a href="/cadastro" class="main-auth-link">Cadastro</a>
-					<a href="/login" class="sub-auth-link">Login</a>
+					<a href="/auth/login" class="sub-auth-link">Login</a>
 				</li>
 			</ul>
 		</nav>
@@ -29,6 +36,15 @@
 
 	</section>
 </footer>
+
+<!-- Espaçador móvel global: evita que o menu fixo sobreponha conteúdo final -->
+<div class="mobile-bottom-spacer" aria-hidden="true"></div>
+<style>
+	.mobile-bottom-spacer { display: none; height: 0; }
+	@media (max-width: 1023px) {
+		.mobile-bottom-spacer { display: block !important; height: calc(96px + env(safe-area-inset-bottom)) !important; }
+	}
+</style>
 
 </body>
 </html>

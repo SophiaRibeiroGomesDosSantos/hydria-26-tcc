@@ -32,6 +32,11 @@ body {
     text-align: center;
 }
 
+/* O global style.css aplica overflow hidden em main; aqui precisamos permitir scroll */
+main.pix-payment {
+    overflow: visible !important;
+}
+
 .pix-layout {
     display: flex;
     flex-direction: column;
@@ -217,8 +222,9 @@ body {
 
 @media (min-width: 1024px) {
     .pix-payment {
-        min-height: calc(100vh - 96px);
+        min-height: unset;
         padding-top: 186px;
+        padding-bottom: 120px;
         max-width: 1100px;
         display: flex;
         align-items: stretch;
@@ -253,6 +259,7 @@ body {
 
     .pix-copy-column {
         min-width: 0;
+        padding-bottom: 80px;
     }
 
     .pix-layout {
@@ -277,9 +284,86 @@ body {
     .pix-actions {
         margin-top: 4px;
         align-items: stretch;
+        margin-bottom: 120px;
     }
 
     .btn-fazer-doacao {
         width: 100%;
+    }
+}
+
+/* Ajustes específicos para mobile: garantir que o botão não fique atrás do menu fixo inferior */
+@media (max-width: 768px) {
+    .pix-payment {
+        /* espaço extra moderado para o menu mobile fixo */
+        padding-bottom: 170px !important;
+    }
+
+    .qr-code-section {
+        order: 1;
+        margin-bottom: 8px;
+    }
+
+    .pix-copy-column {
+        display: flex;
+        flex-direction: column;
+        order: 2;
+        gap: 10px;
+    }
+
+    .instructions {
+        order: 1;
+        font-size: 0.8rem;
+        line-height: 1.35;
+    }
+
+    .instructions ol {
+        margin-bottom: 10px;
+        padding-left: 18px;
+    }
+
+    .copy-paste-area {
+        order: 2;
+        margin: 10px 0 0;
+    }
+
+    .qr-container {
+        padding: 4px;
+        margin-bottom: 4px;
+    }
+
+    .qr-container img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .pix-actions {
+        order: 3;
+        position: static;
+        margin-top: 10px;
+        margin-bottom: 0;
+        padding-top: 0;
+        background: transparent;
+        z-index: auto;
+    }
+
+    .code-box {
+        padding: 8px;
+    }
+
+    .code-box code {
+        font-size: 0.78rem;
+    }
+
+    .btn-fazer-doacao {
+        margin-bottom: 12px;
+        padding: 14px 12px;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .pix-payment ~ .site-footer {
+        margin-top: 80px !important;
     }
 }

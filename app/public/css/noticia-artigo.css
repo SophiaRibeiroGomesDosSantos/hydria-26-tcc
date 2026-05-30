@@ -21,10 +21,21 @@ body {
 .noticia-page-container {
     background-color: var(--bg-page);
     min-height: 100vh;
-    padding: 60px 20px 80px;
+    /* Aumenta o padding-top para evitar que o título "cole" no cabeçalho sticky */
+    padding: 96px 20px 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media (min-width: 769px) {
+    .noticia-page-container {
+        padding-top: 112px !important;
+    }
+
+    .main-news-article {
+        margin-top: -12px;
+    }
 }
 
 /* 1. ARTIGO PRINCIPAL */
@@ -373,28 +384,6 @@ footer .source-info strong {
         content: none;
     }
 
-    .mobile-profile-link {
-        position: fixed;
-        top: calc(env(safe-area-inset-top, 0px) + 8px);
-        right: 18px;
-        width: 3.75rem;
-        height: 3.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1.5px solid currentColor;
-        border-radius: 50%;
-        color: #fff;
-        text-decoration: none;
-        z-index: 1302;
-        mix-blend-mode: difference;
-    }
-
-    .mobile-profile-link i {
-        font-size: 1.65rem;
-        font-weight: 900;
-    }
-
     .main-header {
         display: none;
     }
@@ -421,7 +410,7 @@ footer .source-info strong {
         justify-content: space-between;
         gap: 0;
         width: 100%;
-        padding: 0 0.5rem;
+        padding: 0 0.35rem 0 1rem;
     }
 
     .mobile-navigation li {
@@ -443,6 +432,7 @@ footer .source-info strong {
 
     .mobile-navigation .search-highlight {
         flex: 0 0 72px;
+        margin-left: 0.1rem;
     }
 
     .mobile-navigation a span,
@@ -471,6 +461,11 @@ footer .source-info strong {
         color: var(--blue-navy);
         font-size: 1.6rem;
         margin-bottom: 0;
+    }
+
+    /* Ajuste extra apenas para mobile: garante mais espaço entre o header e o conteúdo da notícia */
+    .noticia-page-container {
+        padding: 76px 12px 84px !important;
     }
 }
 

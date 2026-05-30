@@ -19,7 +19,6 @@
 
 .pagina-projeto-detalhes {
     background-color: var(--white);
-    min-height: 100vh;
     /* full-bleed layout: ocupar toda a largura da viewport */
     max-width: none;
     width: 100vw;
@@ -221,5 +220,9 @@
 
     .hero-section {
         height: auto;
+    }
+
+    .rodape-info-section {
+        padding-bottom: calc(96px + env(safe-area-inset-bottom));
     }
 }

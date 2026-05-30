@@ -206,7 +206,7 @@ main.container {
     align-items: flex-end;
     width: min(100%, 420px);
     margin: 0 auto;
-    padding: 0 0.5rem;
+    padding: 0 0.35rem 0 1rem;
 }
 
 .mobile-navigation li {
@@ -219,6 +219,7 @@ main.container {
 
 .mobile-navigation li.search-highlight {
     width: 72px;
+    margin-left: 0.1rem;
 }
 
 .mobile-navigation a {
@@ -263,28 +264,6 @@ main.container {
 
 .mobile-navigation a.active {
     color: var(--orange-hydria);
-}
-
-.mobile-profile-link {
-    position: fixed;
-    top: calc(env(safe-area-inset-top, 0px) + 8px);
-    right: 18px;
-    width: 3.75rem;
-    height: 3.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1.5px solid currentColor;
-    border-radius: 50%;
-    color: #fff;
-    text-decoration: none;
-    z-index: 1302;
-    mix-blend-mode: difference;
-}
-
-.mobile-profile-link i {
-    font-size: 1.65rem;
-    font-weight: 900;
 }
 
 @media (min-width: 768px) {

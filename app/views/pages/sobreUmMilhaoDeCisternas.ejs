@@ -42,7 +42,7 @@
             </nav>
 
             <nav class="auth-navigation" aria-label="Autenticação de usuário">
-                <a href="/login" class="btn-login">LOGIN</a>
+                <a href="/auth/login" class="btn-login">LOGIN</a>
                 <a href="/auth/cadastro" class="btn-cadastro">CADASTRO</a>
             </nav>
         </aside>
@@ -62,9 +62,7 @@
                     consumo humano, produção de alimentos e para servir aos animais. Estoque de alimento para família e para a criação 
                     animal. E o estoque de sementes para os próximos plantios, entre outros.
                 </p>
-                <footer>
-                    <a href="/doacoes" class="btn-fazer-doacao">Fazer Doação</a>
-                </footer>
+                <a href="/doacoes" class="btn-fazer-doacao">Fazer Doação</a>
             </article>
         </section>
 
@@ -185,12 +183,6 @@
                 </a>
             </li>
             <li>
-                <a href="/perfil" class="nav-link" aria-label="Perfil">
-                    <i class="fas fa-user" aria-hidden="true"></i>
-                    <span>Perfil</span>
-                </a>
-            </li>
-            <li>
                 <a href="/contato">
                     <i class="fas fa-comment-dots" aria-hidden="true"></i>
                     <span>Contato</span>
@@ -202,41 +194,15 @@
                     <span>Sobre</span>
                 </a>
             </li>
+            <li>
+                <a href="/auth/login">
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                    <span>Perfil</span>
+                </a>
+            </li>
         </ul>
     </nav>
 
     <script src="/js/auto-fix.js"></script>
 
-<footer class="site-footer">
-    <section class="footer-inner-container">
-        
-        <nav class="footer-links-nav" aria-label="Navegação secundária do rodapé">
-            <ul>
-                <li><a href="/contato">Contato</a></li>
-                <li><a href="/quem-somos">Quem somos?</a></li>
-                <li><a href="/projetos">Projetos</a></li>
-                <li class="auth-stacked-item">
-                    <a href="/cadastro" class="main-auth-link">Cadastro</a>
-                    <a href="/login" class="sub-auth-link">Login</a>
-                </li>
-            </ul>
-        </nav>
-
-        <article class="footer-identity-block">
-            <figure class="brand-footer-wrapper">
-                <img src="/images/logotipo.png" alt="Logotipo Hydria">
-                <figcaption>HYDRIA</figcaption>
-            </figure>
-            
-            <nav class="footer-social-media" aria-label="Redes sociais corporativas">
-                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            </nav>
-        </article>
-
-    </section>
-</footer>
-
-</body>
-</html>
+    <%- include("../partial/footer") %>

@@ -204,7 +204,7 @@ textarea { resize: none; }
     /* Layout mobile: transformar em cards e ajustar espaçamentos */
     .contato-desktop {
         height: auto;
-        padding: 56px 0 40px;
+        padding: 56px 0 calc(96px + env(safe-area-inset-bottom));
         background-color: var(--bg-light-blue);
         display: block;
     }

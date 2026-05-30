@@ -122,20 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function ensureMobileProfileLink() {
-        let profileLink = document.querySelector('.mobile-profile-link');
-        if (!profileLink) {
-            profileLink = document.createElement('a');
-            profileLink.className = 'mobile-profile-link';
-            profileLink.href = '/login';
-            profileLink.setAttribute('aria-label', 'Acessar login');
-            profileLink.innerHTML = '<i class="fas fa-user" aria-hidden="true"></i>';
-            document.body.appendChild(profileLink);
-        }
-    }
-
     ensureFormValidationScript();
-    ensureMobileProfileLink();
 
     // Aplicar correções novamente após o carregamento dos partials
     setTimeout(() => {

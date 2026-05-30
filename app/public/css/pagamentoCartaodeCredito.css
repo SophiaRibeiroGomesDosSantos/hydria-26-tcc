@@ -8,7 +8,6 @@
 
 .credit-card-page {
     background-color: var(--bg-blue-light);
-    min-height: 100vh;
     display: block;
 }
 
@@ -16,7 +15,6 @@
     background-color: transparent;
     width: 100vw;
     max-width: 100vw;
-    min-height: 100vh;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(40vw, 45vw);
     box-shadow: none;
@@ -101,12 +99,12 @@
 /* Coluna Visual */
 .visual-section {
     position: relative;
-    min-height: 100vh;
     width: 100%;
     background-color: transparent;
     overflow: visible;
     z-index: 0;
     pointer-events: none;
+    padding-bottom: 120px;
 }
 
 /* Puxar a coluna visual para cima, colando-a ao cabeçalho */
@@ -229,11 +227,12 @@
 }
 
 @media (min-width: 1024px) {
-    /* Mesmo padrão da página de doações */
     .credit-card-page .card-container .visual-section,
     .selecionar-valor-page .card-container .visual-section {
         margin-top: -28px;
         overflow: visible;
+        min-height: calc(100vh - 80px);
+        padding-bottom: 200px;
     }
 
     .credit-card-page .hero-image,
@@ -252,5 +251,13 @@
         object-position: center top;
         display: block !important;
         position: static !important;
+    }
+}
+@media (min-width: 1024px) {
+    .credit-card-page ~ .site-footer {
+        margin-top: 0 !important;
+    }
+    .credit-card-page {
+        padding-bottom: 60px;
     }
 }

@@ -1,8 +1,10 @@
+require('dotenv').config();
+
 const express = require('express');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.APP_PORT || process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'app/views'));
@@ -30,39 +32,7 @@ app.use('/auth', authRoutes);
 app.use('/admin', adminRoutes);
 app.use('/adm', admRoutes);
 
-// Rota de teste para login
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'app/views/auth/login.ejs'));
-});
-
-app.get('/auth/cadastro', (req, res) => {
-    res.sendFile(path.join(__dirname, 'app/views/auth/cadastro.ejs'));
-});
-
-app.get('/auth/editar-perfil', (req, res) => {
-    res.sendFile(path.join(__dirname, 'app/views/pages/editar-perfil.ejs'));
-});
-
-app.get('/mensagemEnviada', (req, res) => {
-    res.sendFile(path.join(__dirname, 'app/views/pages/mensagemEnviada.ejs'));
-});
-
-app.get('/mensagem-enviada', (req, res) => {
-    res.sendFile(path.join(__dirname, 'app/views/pages/mensagemEnviada.ejs'));
-});
-
-// Rotas diretas para auth
-app.get('/recuperar-senha', (req, res) => {
-    res.sendFile(path.join(__dirname, 'app/views/auth/recuperar-senha.ejs'));
-});
-
-app.get('/verificacao', (req, res) => {
-    res.sendFile(path.join(__dirname, 'app/views/auth/verificacao.ejs'));
-});
-
-app.get('/nova-senha', (req, res) => {
-    res.sendFile(path.join(__dirname, 'app/views/auth/novasenha.ejs'));
-});
+// Rotas e views: registro centralizado em `app/routes/` (ex.: `router.js`, `auth.js`)
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);

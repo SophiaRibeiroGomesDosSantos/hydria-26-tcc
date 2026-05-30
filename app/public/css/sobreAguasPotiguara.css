@@ -13,7 +13,6 @@
 
 .pagina-projeto-detalhes {
     background-color: var(--white);
-    min-height: 100vh;
     /* full-bleed layout: ocupar toda a largura da viewport */
     max-width: none;
     width: 100vw;

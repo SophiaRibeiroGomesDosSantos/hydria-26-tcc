@@ -41,7 +41,7 @@
             </nav>
 
             <nav class="auth-navigation" aria-label="Autenticação de usuário">
-                <a href="/login" class="btn-login">LOGIN</a>
+                <a href="/auth/login" class="btn-login">LOGIN</a>
                 <a href="/auth/cadastro" class="btn-cadastro">CADASTRO</a>
             </nav>
         </aside>
@@ -84,9 +84,7 @@
                         </figure>
                         <h3>Instituto Água Viva</h3>
                         <p>Desde 2015, o Instituto Água Viva atua como agente de transformação social no Sertão nordestino, alcançando comunidades nos estados da Bahia, Piauí, Paraíba e Pernambuco.</p>
-                        <footer>
-                            <a href="/sobreInstitutoAguaViva" class="btn-saber-mais">Saber mais</a>
-                        </footer>
+                        <a href="/sobreInstitutoAguaViva" class="btn-saber-mais">Saber mais</a>
                     </article>
                 </li>
 
@@ -97,9 +95,7 @@
                         </figure>
                         <h3>Águas Potiguara</h3>
                         <p>O Águas Potiguara recupera o Rio do Canto e fortalece o território indígena com ações ambientais, culturais e saberes ancestrais sobre as águas.</p>
-                        <footer>
-                            <a href="/sobre-aguas-potiguara" class="btn-saber-mais">Saber mais</a>
-                        </footer>
+                        <a href="/sobre-aguas-potiguara" class="btn-saber-mais">Saber mais</a>
                     </article>
                 </li>
 
@@ -110,16 +106,15 @@
                         </figure>
                         <h3>Um Milhão de Cisternas</h3>
                         <p>Tecnologia social que utiliza cisternas de placas para captar água de chuva no semiárido brasileiro. O foco é garantir autonomia e segurança hídrica para o...</p>
-                        <footer>
-                            <a href="/sobre-um-milhao-de-cisternas" class="btn-saber-mais">Saber mais</a>
-                        </footer>
+                        <a href="/sobre-um-milhao-de-cisternas" class="btn-saber-mais">Saber mais</a>
                     </article>
                 </li>
             </ul>
         </section>
     </main>
 
-    
+    <div class="bottom-spacer" aria-hidden="true"></div>
+
     <nav class="mobile-navigation" aria-label="Navegação inferior">
         <ul>
             <li>
@@ -135,12 +130,6 @@
                 </a>
             </li>
             <li>
-                <a href="/perfil" class="nav-link" aria-label="Perfil">
-                    <i class="fas fa-user" aria-hidden="true"></i>
-                    <span>Perfil</span>
-                </a>
-            </li>
-            <li>
                 <a href="/contato">
                     <i class="fas fa-comment-dots" aria-hidden="true"></i>
                     <span>Contato</span>
@@ -152,43 +141,17 @@
                     <span>Sobre</span>
                 </a>
             </li>
+            <li>
+                <a href="/auth/login">
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                    <span>Perfil</span>
+                </a>
+            </li>
         </ul>
     </nav>
 
     <script src="/js/auto-fix.js"></script>
 
-<footer class="site-footer">
-    <section class="footer-inner-container">
-        
-        <nav class="footer-links-nav" aria-label="Navegação secundária do rodapé">
-            <ul>
-                <li><a href="/contato">Contato</a></li>
-                <li><a href="/quem-somos">Quem somos?</a></li>
-                <li><a href="/projetos">Projetos</a></li>
-                <li class="auth-stacked-item">
-                    <a href="/cadastro" class="main-auth-link">Cadastro</a>
-                    <a href="/login" class="sub-auth-link">Login</a>
-                </li>
-            </ul>
-        </nav>
-
-        <article class="footer-identity-block">
-            <figure class="brand-footer-wrapper">
-                <img src="/images/logotipo.png" alt="Logotipo Hydria">
-                <figcaption>HYDRIA</figcaption>
-            </figure>
-            
-            <nav class="footer-social-media" aria-label="Redes sociais corporativas">
-                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            </nav>
-        </article>
-
-    </section>
-</footer>
-
-</body>
-</html>
+    <%- include("../partial/footer") %>
 
 

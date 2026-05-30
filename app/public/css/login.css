@@ -28,7 +28,7 @@ body {
     width: 100vw;
     display: flex;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .login-area {
@@ -43,6 +43,7 @@ body {
 .login-card {
     width: 100%;
     max-width: 420px;
+    padding-bottom: 120px;
 }
 
 .login-card h1 {
@@ -146,8 +147,8 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    width: 42%;
-    height: 94%;
+    left: calc(58% - 20px);
+    height: 100%;
     background-color: var(--blue-vibrant);
 }
 
@@ -255,6 +256,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    padding-bottom: 120px;
 }
 
 .btn-entrar {
@@ -355,6 +357,7 @@ body {
 
     .login-actions {
         padding: 30px 20px;
+        padding-bottom: 120px;
     }
 
     .btn-entrar {
@@ -397,7 +400,7 @@ body {
     }
 
     .login-actions {
-        padding: 20px;
+        padding: 20px 20px 120px;
     }
 }
 
@@ -443,5 +446,20 @@ body {
 .login-mobile footer {
     border-top: 0 !important;
     background: transparent !important;
+}
+
+/* Espaço extra inferior nas páginas de autenticação para evitar sobreposição do footer */
+.login-desktop,
+.login-mobile,
+.cadastro-desktop,
+.cadastro-mobile,
+.nova-senha-desktop,
+.nova-senha-mobile-page,
+.forgot-desktop,
+.forgot-mobile,
+.verificacao-desktop,
+.verificacao-mobile {
+    padding-bottom: 140px; /* ajustável conforme a altura do footer */
+    margin-bottom: 140px;
 }
 

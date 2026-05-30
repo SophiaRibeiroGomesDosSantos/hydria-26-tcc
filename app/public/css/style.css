@@ -1,4 +1,4 @@
-﻿/* 1. RESET E VARIÁVEIS */
+/* 1. RESET E VARI�VEIS */
 :root {
     --primary-blue: #002855;
     --accent-blue: #a3c1ff;
@@ -6,6 +6,7 @@
     --text-dark: #1a1a1a;
     --bg-light: #e9efff;
     --white: #ffffff;
+    --bg-navy-dark: #001147;
 }
 
 * {
@@ -14,14 +15,20 @@
     box-sizing: border-box;
 }
 
-/* Reset adicional sugerido pelo usuário para evitar margens inesperadas */
+html,
+body {
+    min-height: 100%;
+    background-color: var(--bg-light);
+}
+
+/* Reset adicional sugerido pelo usu�rio para evitar margens inesperadas */
 body {
     margin: 0;
     padding: 0;
     width: 100vw; /* Garante que o corpo ocupe toda a largura da tela */
 }
 
-/* Remover margem/padding extra de seções hero/images que empurram o header */
+/* Remover margem/padding extra de se��es hero/images que empurram o header */
 .hero,
 .sua-secao-hero {
     margin-top: 0 !important;
@@ -30,7 +37,6 @@ body {
 
 /* Evitar que margens internas vazem para o topo e garantir header sem margem */
 main, .sua-secao-hero {
-    overflow: hidden; /* impede que margens de elementos filhos afetem o topo */
     margin-top: 0 !important;
     padding-top: 0 !important;
 }
@@ -57,10 +63,10 @@ main, .sua-secao-hero {
 .mobile-navigation ul {
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 8px;
-    gap: 14px;
+    padding: 0 14px 0 10px;
+    gap: 6px;
 }
 
 .mobile-navigation li {
@@ -69,25 +75,19 @@ main, .sua-secao-hero {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 10px;
+    padding: 0 8px 0 12px;
 }
 
 .mobile-navigation a {
     display: flex;
     flex-direction: column;
-    
-    /* Hide back button on mobile across the site */
-    @media (max-width: 900px) {
-        .btn-voltar {
-            display: none !important;
-        }
-    }
     align-items: center;
     justify-content: center;
     text-decoration: none;
     color: var(--primary-blue);
     font-size: 0.75rem;
-    padding: 0.4rem 0;
+    padding: 0.45rem 0;
+    min-height: 72px;
 }
 
 .mobile-navigation a span {
@@ -103,25 +103,7 @@ main, .sua-secao-hero {
 
 .mobile-navigation a i {
     font-size: 1.6rem;
-    margin-bottom: 8px;
-}
-
-.mobile-navigation .search-bg {
-    background: var(--accent-blue);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -55px !important;
-    border: 6px solid var(--bg-light);
-}
-
-.mobile-navigation .search-bg i {
-    color: var(--primary-blue);
-    font-size: 1.6rem;
-    margin-bottom: 0;
+    margin-bottom: 4px;
 }
 
 body {
@@ -129,8 +111,94 @@ body {
     background-color: var(--bg-light);
     color: var(--primary-blue);
     line-height: 1.5;
-    padding-top: 72px; /* Espaço para o cabeçalho fixo */
-    padding-bottom: 80px; /* Espaço para o menu inferior */
+    padding-top: 72px; /* Espa�o para o cabe�alho fixo */
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site-footer {
+    background-color: var(--bg-navy-dark);
+    width: 100%;
+    padding: 50px 0;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+.home-main-content {
+    flex: 1 0 auto;
+}
+.footer-inner-container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-links-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+}
+.footer-links-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+.footer-links-nav a:hover {
+    opacity: 0.8;
+}
+.auth-stacked-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+.sub-auth-link {
+    font-size: 0.85rem !important;
+    opacity: 0.9;
+}
+.footer-identity-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+}
+.brand-footer-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.brand-footer-wrapper img {
+    height: 32px;
+    width: auto;
+}
+.brand-footer-wrapper figcaption {
+    color: var(--white);
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    line-height: 1;
+}
+.footer-social-media {
+    display: flex;
+    gap: 14px;
+}
+.footer-social-media a {
+    color: var(--white);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.footer-social-media a:hover {
+    transform: translateY(-2px);
+    opacity: 0.8;
 }
 
 /* 2. HEADER / HERO */
@@ -189,6 +257,28 @@ body {
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
+/* === Centraliza menu mobile padr�o (baseado em noticia-artigo) === */
+@media (max-width: 768px) {
+    .main-header { display: none !important; }
+    body { padding-bottom: 88px !important; }
+
+    .mobile-navigation { display: block !important; position: fixed !important; left: 0 !important; right: 0 !important; bottom: 0 !important; background: var(--white) !important; box-shadow: 0 -2px 10px rgba(0,0,0,0.1) !important; z-index: 1200 !important; padding: 0.5rem 0 !important; }
+
+    .mobile-navigation ul { display: flex !important; align-items: flex-end !important; justify-content: space-between !important; gap: 0 !important; width: 100% !important; padding: 0 0.35rem 0 1rem !important; }
+
+    .mobile-navigation li { flex: 1 1 0 !important; min-width: 0 !important; min-height: 75px !important; }
+
+    .mobile-navigation a { display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; color: var(--primary-blue) !important; font-size: 0.75rem !important; padding: 0.55rem 0 !important; width: 100% !important; }
+
+    .mobile-navigation a i { font-size: 1.6rem !important; margin-bottom: 4px !important; }
+
+    .mobile-navigation .search-highlight { flex: 0 0 72px !important; margin-left: 0.1rem !important; }
+
+    .mobile-navigation .search-bg { background: var(--bg-light) !important; width: 62px !important; height: 62px !important; border-radius: 50% !important; display: flex !important; justify-content: center !important; align-items: center !important; margin-top: -30px !important; border: 5px solid var(--bg-light) !important; }
+
+    .mobile-navigation .search-bg i { color: var(--primary-blue) !important; font-size: 1.6rem !important; margin-bottom: 0 !important; }
+}
+
 .hero-content button:hover {
     background: #0f4ccf;
     color: var(--white);
@@ -202,9 +292,10 @@ body {
 
 .home-main-content {
     background-color: var(--bg-light);
-    min-height: 100vh;
+    flex: 1 0 auto;
+    min-height: auto;
     padding-top: 20px !important;
-    padding-bottom: 100px;
+    padding-bottom: 0;
 }
 
 .home-top-spacer {
@@ -311,7 +402,7 @@ body {
     margin-bottom: 130px;
 }
 
-/* Forçar espaçamento caso outras regras sobrescrevam */
+/* For�ar espa�amento caso outras regras sobrescrevam */
 .arguments-section {
     margin-bottom: 130px !important;
 }
@@ -457,9 +548,9 @@ body {
     background: #000;
 }
 
-/* ======= CABEÇALHO GLOBAL ======= */
+/* ======= CABE�ALHO GLOBAL ======= */
 .main-header {
-    display: block; /* Força o elemento a se comportar como um bloco 100% */
+    display: block; /* For�a o elemento a se comportar como um bloco 100% */
     background-color: #001a57;
     width: 100%;
     height: 80px;
@@ -663,28 +754,6 @@ body {
         content: none;
     }
 
-    .mobile-profile-link {
-        position: fixed;
-        top: calc(env(safe-area-inset-top, 0px) + 8px);
-        right: 18px;
-        width: 3.75rem;
-        height: 3.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1.5px solid currentColor;
-        border-radius: 50%;
-        color: #fff;
-        text-decoration: none;
-        z-index: 1302;
-        mix-blend-mode: difference;
-    }
-
-    .mobile-profile-link i {
-        font-size: 1.65rem;
-        font-weight: 900;
-    }
-
     .main-header {
         display: none;
     }
@@ -708,14 +777,16 @@ body {
 
     .mobile-navigation ul {
         display: flex;
-        align-items: flex-end;
-        justify-content: space-around;
-        padding: 0 0.25rem;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 0.9rem 0 0.55rem;
+        gap: 6px;
     }
 
     .mobile-navigation li {
         flex: 1;
         min-height: 75px;
+        padding: 0 6px 0 10px;
     }
 
     .mobile-navigation a {
@@ -726,6 +797,7 @@ body {
         color: var(--primary-blue);
         font-size: 0.75rem;
         padding: 0.55rem 0;
+        min-height: 72px;
     }
 
     .mobile-navigation a span,
@@ -737,27 +809,9 @@ body {
         font-size: 1.6rem;
         margin-bottom: 4px;
     }
-
-    .mobile-navigation .search-bg {
-        background: var(--bg-light);
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: -35px;
-        border: 6px solid var(--bg-light);
-    }
-
-    .mobile-navigation .search-bg i {
-        color: var(--primary-blue);
-        font-size: 1.6rem;
-        margin-bottom: 0;
-    }
 }
 
-/* 3. SEÇÃO PROJETOS */
+/* 3. SE��O PROJETOS */
 .projects {
     padding: 2rem 1rem;
 }
@@ -848,7 +902,7 @@ body {
     text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
 }
 
-/* 4. NOTÍCIAS */
+/* 4. NOT�CIAS */
 .news {
     padding: 0 1rem;
     display: flex;
@@ -933,7 +987,7 @@ body {
     overflow: hidden;
 }
 
-/* 5. CTA DOAÇÃO (ASIDE) */
+/* 5. CTA DOA��O (ASIDE) */
 .cta-donation {
     width: 100%;
     max-width: 1200px;
@@ -997,14 +1051,29 @@ body {
     width: 100%;
 }
 
-/* Esconder o rodapé em telas pequenas (mobile) */
+/* Esconder o rodap� em telas pequenas (mobile) */
 @media (max-width: 768px) {
-    .site-footer {
-        display: none !important;
-    }
-    /* mantém espaço para a navegação móvel inferior */
     body {
-        padding-bottom: 88px; /* já usado para mobile-navigation */
+        padding-bottom: 88px; /* j� usado para mobile-navigation */
+    }
+    .site-footer {
+        padding: 34px 0 42px;
+    }
+    .footer-inner-container {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    .footer-links-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .footer-identity-block {
+        align-items: center;
+    }
+    .footer-social-media {
+        justify-content: center;
     }
 }
 
@@ -1047,6 +1116,32 @@ mark {
     color: var(--primary-blue);
     padding: 3rem 2rem;
     text-align: center;
+}
+/* Force footer to stay at page bottom and avoid whitespace after it.
+   This is a final override to ensure all pages have consistent layout. */
+html, body {
+    height: 100% !important;
+}
+body {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh !important;
+    padding-bottom: 0 !important;
+}
+main, .home-main-content, .page-detalhes, .projetos-desktop-page, .noticia-page-container, .contato-desktop, .doacao-selecao, .pagamento-selecao, .sobre-nos-page, .pagina-projeto-detalhes, .credit-card-page {
+    flex: 1 0 auto !important;
+}
+.site-footer {
+    margin-top: auto !important;
+    flex-shrink: 0 !important;
+}
+
+/* Garantir que o footer n�o seja fixo em nenhuma p�gina (override forte) */
+footer, .site-footer, .main-footer {
+    position: static !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
 }
 
 .ong-card {
@@ -1176,10 +1271,7 @@ mark {
     /* Destaques: transformar em header sticky com carrossel horizontal no mobile */
     .highlights {
         padding: 1.5rem 1rem;
-        position: sticky;
-        top: 72px;
-        z-index: 30;
-        background: var(--bg-light);
+        
     }
 
     .highlights-carousel {
@@ -1225,7 +1317,7 @@ mark {
         margin: 0 auto 1rem;
     }
 
-    /* garantir títulos laranja também no mobile */
+    /* garantir t�tulos laranja tamb�m no mobile */
     .highlights-carousel .ong-card h3 {
         color: var(--orange-action);
     }
@@ -1243,7 +1335,7 @@ mark {
         display: block;
     }
 
-    /* Restaurar layout das notícias para 1 coluna no mobile */
+    /* Restaurar layout das not�cias para 1 coluna no mobile */
     .news-cards-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -1271,7 +1363,39 @@ mark {
         padding-bottom: 96px;
         padding-top: 80px;
     }
+}
 
+/* Spacer fix: garante espa�o antes do menu m�vel fixo em telas pequenas */
+.bottom-spacer {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .bottom-spacer {
+        display: block !important;
+        height: calc(96px + env(safe-area-inset-bottom));
+        width: 100%;
+    }
+}
+
+/* Ajustes espec�ficos para bot�o "Ver Todos Projetos" no mobile */
+@media (max-width: 900px) {
+    .btn-full-projects {
+        min-width: auto !important;
+        max-width: 92% !important;
+        padding: 0.6rem 1.2rem !important;
+        font-size: 0.95rem !important;
+        box-sizing: border-box !important;
+    }
+
+    .all-projects-nav {
+        display: flex !important;
+        justify-content: center !important;
+        padding-bottom: 8px !important;
+    }
+}
+
+@media (min-width: 1024px) {
     .nav-voltar,
     .btn-voltar,
     .btn-circular-voltar,
@@ -1536,8 +1660,8 @@ mark {
     }
 }
 
-/* ======= CORREÇÃO GLOBAL LEVE DE FOCO (acessibilidade visual suave) ======= */
-/* Substitui outlines pesados por um anel suave; mantém foco visível para acessibilidade */
+/* ======= CORRE��O GLOBAL LEVE DE FOCO (acessibilidade visual suave) ======= */
+/* Substitui outlines pesados por um anel suave; mant�m foco vis�vel para acessibilidade */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -1565,15 +1689,21 @@ select:focus,
     box-shadow: 0 0 0 4px rgba(0, 26, 87, 0.12) !important;
 }
 
-/* Remover borda interna do Firefox em botões para evitar retângulos sólidos */
+/* Remover borda interna do Firefox em bot�es para evitar ret�ngulos s�lidos */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
     border: 0 !important;
     padding: 0 !important;
 }
 
-/* Exceções: componentes que precisarem de destaque mais forte podem usar uma classe dedicada */
+/* Exce��es: componentes que precisarem de destaque mais forte podem usar uma classe dedicada */
 .focus-strong:focus-visible {
     outline: 3px solid rgba(0,26,87,0.35) !important;
     box-shadow: none !important;
+}
+
+@media (max-width: 900px) {
+    .highlights {
+        overflow: visible;
+    }
 }

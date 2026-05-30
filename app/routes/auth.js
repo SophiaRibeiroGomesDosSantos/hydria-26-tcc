@@ -4,32 +4,37 @@ const router = express.Router();
 
 // Login
 router.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, '../vistas/auth/login.html'));
+    res.render('auth/login');
 });
 
 // Cadastro
 router.get('/cadastro', (req, res) => {
-    res.sendFile(path.join(__dirname, '../vistas/auth/cadastro.html'));
+    res.render('auth/cadastro');
 });
 
 // Nova senha
 router.get('/nova-senha', (req, res) => {
-    res.sendFile(path.join(__dirname, '../vistas/auth/novasenha.html'));
+    res.render('auth/novasenha');
+});
+
+// Alias sem hífen para compatibilidade com links antigos
+router.get('/novasenha', (req, res) => {
+    res.render('auth/novasenha');
 });
 
 // Editar perfil
 router.get('/editar-perfil', (req, res) => {
-    res.sendFile(path.join(__dirname, '../vistas/pages/editar-perfil.html'));
+    res.render('pages/editar-perfil');
 });
 
 // Recuperar senha
 router.get('/recuperar-senha', (req, res) => {
-    res.sendFile(path.join(__dirname, '../vistas/auth/recuperar-senha.html'));
+    res.render('auth/recuperar-senha');
 });
 
 // VerificaÃ§Ã£o
 router.get('/verificacao', (req, res) => {
-    res.sendFile(path.join(__dirname, '../vistas/auth/verificacao.html'));
+    res.render('auth/verificacao');
 });
 
 // POST para Verificação (temporário - durante desenvolvimento)

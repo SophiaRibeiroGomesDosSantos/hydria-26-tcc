@@ -44,7 +44,7 @@
             </nav>
 
             <nav class="auth-navigation" aria-label="Autenticação de usuário">
-                <a href="/login" class="btn-login">LOGIN</a>
+                <a href="/auth/login" class="btn-login">LOGIN</a>
                 <a href="/auth/cadastro" class="btn-cadastro">CADASTRO</a>
             </nav>
         </aside>
@@ -121,12 +121,6 @@
                 </a>
             </li>
             <li>
-                <a href="/perfil" class="nav-link" aria-label="Perfil">
-                    <i class="fas fa-user" aria-hidden="true"></i>
-                    <span>Perfil</span>
-                </a>
-            </li>
-            <li>
                 <a href="/contato">
                     <i class="fas fa-comment-dots" aria-hidden="true"></i>
                     <span>Contato</span>
@@ -175,8 +169,28 @@
             selectedAmount = null;
             updateProceedState();
             if (valorPersonalizado.classList.contains('is-open')) {
-                valorPersonalizadoInput.focus();
+                setTimeout(() => {
+                    valorPersonalizadoInput.focus();
+                    valorPersonalizadoInput.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                }, 400);
             }
+        });
+
+        valorPersonalizadoInput.addEventListener('focus', () => {
+            setTimeout(() => {
+                if (window.visualViewport) {
+                    const viewport = window.visualViewport;
+                    const inputRect = valorPersonalizadoInput.getBoundingClientRect();
+                    const inputBottom = inputRect.bottom;
+                    const viewportBottom = viewport.height;
+                    if (inputBottom > viewportBottom - 20) {
+                        const scrollBy = inputBottom - viewportBottom + 40;
+                        window.scrollBy({ top: scrollBy, behavior: 'smooth' });
+                    }
+                } else {
+                    valorPersonalizadoInput.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                }
+            }, 400);
         });
 
         valorPersonalizadoInput.addEventListener('input', () => {
@@ -204,36 +218,4 @@
 
     <script src="/js/auto-fix.js"></script>
 
-<footer class="site-footer">
-    <section class="footer-inner-container">
-        
-        <nav class="footer-links-nav" aria-label="Navegação secundária do rodapé">
-            <ul>
-                <li><a href="/contato">Contato</a></li>
-                <li><a href="/quem-somos">Quem somos?</a></li>
-                <li><a href="/projetos">Projetos</a></li>
-                <li class="auth-stacked-item">
-                    <a href="/cadastro" class="main-auth-link">Cadastro</a>
-                    <a href="/login" class="sub-auth-link">Login</a>
-                </li>
-            </ul>
-        </nav>
-
-        <article class="footer-identity-block">
-            <figure class="brand-footer-wrapper">
-                <img src="/images/logotipo.png" alt="Logotipo Hydria">
-                <figcaption>HYDRIA</figcaption>
-            </figure>
-            
-            <nav class="footer-social-media" aria-label="Redes sociais corporativas">
-                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            </nav>
-        </article>
-
-    </section>
-</footer>
-
-</body>
-</html>
+    <%- include("../partial/footer") %>

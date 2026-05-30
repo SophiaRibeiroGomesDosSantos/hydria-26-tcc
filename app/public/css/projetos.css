@@ -450,3 +450,10 @@ body {
         padding-bottom: 96px;
     }
 }
+
+/* Espaço extra antes do menu móvel fixo na página de projetos */
+@media (max-width: 900px) {
+    .projetos-desktop-page {
+        padding-bottom: calc(96px + env(safe-area-inset-bottom)) !important;
+    }
+}

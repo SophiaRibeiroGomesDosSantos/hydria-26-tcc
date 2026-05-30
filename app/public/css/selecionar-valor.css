@@ -315,8 +315,9 @@ main.selecionar-valor-page {
         padding: 12px 20px;
     }
 
-    .valor-personalizado {
+    .selecionar-valor-page .valor-personalizado {
         max-width: 320px;
+        margin-bottom: 48px;
     }
 }
 

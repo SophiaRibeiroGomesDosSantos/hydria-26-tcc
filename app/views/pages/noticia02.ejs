@@ -1,184 +1,36 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Notícia 02 - Hydria</title>
-  <link rel="stylesheet" href="/css/noticia-artigo.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-</head>
-<body>
-    
-<header class="main-header desktop-header">
-    <section class="header-container">
-        <article class="brand-wrapper">
-            <a href="/" class="brand-link" aria-label="Página inicial">
-                <img src="/images/logotipo.png" alt="Logotipo Hydria" class="logo-img">
-                <span class="brand-text">HYDRIA</span>
-            </a>
-        </article>
-
-        <nav class="main-navigation" aria-label="Navegação principal">
-            <ul>
-                <li><a href="/projetos">PROJETOS</a></li>
-                <li><a href="/sobre">SOBRE</a></li>
-                <li><a href="/contato">CONTATO</a></li>
-            </ul>
-        </nav>
-
-        <aside class="actions-wrapper">
-            <nav class="accessibility-controls" aria-label="Controles de acessibilidade">
-                <button type="button" id="decrease-font" aria-label="Diminuir tamanho do texto">
-                    <img src="/images/A-acessibilidade.png" alt="Ícone diminuir fonte">
-                </button>
-                <button type="button" id="increase-font" aria-label="Aumentar tamanho do texto">
-                    <img src="/images/A+acessibilidade.png" alt="Ícone aumentar fonte">
-                </button>
-                <button type="button" id="toggle-contrast" aria-label="Alternar alto contraste">
-                    <img src="/images/contrasteacessibilidade.png" alt="Ícone alto contraste">
-                </button>
-            </nav>
-
-            <nav class="auth-navigation" aria-label="Autenticação de usuário">
-                <a href="/login" class="btn-login">LOGIN</a>
-                <a href="/auth/cadastro" class="btn-cadastro">CADASTRO</a>
-            </nav>
-        </aside>
-    </section>
-</header>
-<main class="noticia-page-container">
-      <article class="main-news-article">
-          <header>
-              <h1>Falta de água no Rio de Janeiro</h1>
-
-              <figure class="featured-image-container">
-                  <img src="/images/img-noticie02.jpg" alt="Falta de água RJ">
-              </figure>
-          </header>
-
-          <section class="article-body">
-              <p>Com temperaturas chegando aos 42 graus, 36 bairros da Zona Norte do Rio de Janeiro enfrentarão falta de água. A situação afeta milhares de moradores abastecidos pela concessionária "Águas do Rio".</p>
-
-              <p>A empresa informou que o problema é causado pelo aumento do consumo devido às altas temperaturas e está trabalhando para normalizar o abastecimento o mais rápido possível.</p>
-
-              <p class="source-info"><strong>Fonte:</strong> Águas do Rio</p>
-          </section>
-      </article>
-
-      <hr class="section-divider">
-
-      <section class="more-news-section">
-          <header>
-              <h2>MAIS NOTÍCIAS</h2>
-          </header>
-
-          <ul class="news-cards-grid">
-              <li>
-                  <a href="/noticia03" class="mini-news-link" aria-label="Abrir notícia: Fiscalização de água mineral">
-                      <article class="mini-news-card">
-                          <figure>
-                              <img src="/images/img-noticie03.jpg" alt="Fiscalização água mineral">
-                          </figure>
-                          <h3>FISCALIZAÇÃO DE ÁGUA MINERAL</h3>
-                          <p class="mini-news-excerpt">Fiscalização busca irregularidades e garante que padrões de qualidade sejam cumpridos pelos fornecedores...</p>
-                      </article>
-                  </a>
-              </li>
-
-              <li>
-                  <a href="/noticia04" class="mini-news-link" aria-label="Abrir notícia: Doenças infecciosas no Rio Grande do Sul">
-                      <article class="mini-news-card">
-                          <figure>
-                              <img src="/images/img-noticie04.png" alt="Doenças infecciosas RS">
-                          </figure>
-                          <h3>DOENÇAS INFECCIOSAS NO RIO GRANDE DO SUL</h3>
-                          <p class="mini-news-excerpt">Relatório aponta possíveis cenários e recomendações para reduzir a transmissão e o impacto sobre a população...</p>
-                      </article>
-                  </a>
-              </li>
-
-              <li>
-                  <a href="/noticia05" class="mini-news-link" aria-label="Abrir notícia: Comunidade de Tapanã critica obras da COP30 e falta de saneamento básico">
-                      <article class="mini-news-card">
-                          <figure>
-                              <img src="/images/img-noticie05.jpg" alt="Comunidade de Tapanã">
-                          </figure>
-                          <h3>COMUNIDADE DE TAPANÃ CRITICA OBRAS DA COP30 E FALTA DE SANEAMENTO BÁSICO</h3>
-                          <p class="mini-news-excerpt">Líderes locais apontam lacunas de infraestrutura que agravam riscos à saúde e ao meio ambiente...</p>
-                      </article>
-                  </a>
-              </li>
-          </ul>
-      </section>
-  </main>
-
-  <nav class="mobile-navigation" aria-label="Navegação inferior">
-      <ul>
-          <li>
-              <a href="/" class="active">
-                  <i class="fas fa-home" aria-hidden="true"></i>
-                  <span>Início</span>
-              </a>
-          </li>
-          <li>
-              <a href="/projetos">
-                  <i class="fas fa-file-alt" aria-hidden="true"></i>
-                  <span>Projetos</span>
-              </a>
-          </li>
-          <li class="search-highlight">
-              <a href="#" aria-label="Pesquisar">
-                  <span class="search-bg">
-                      <i class="fas fa-search" aria-hidden="true"></i>
-                  </span>
-              </a>
-          </li>
-          <li>
-              <a href="/contato">
-                  <i class="fas fa-comment-dots" aria-hidden="true"></i>
-                  <span>Contato</span>
-              </a>
-          </li>
-          <li>
-              <a href="/sobre">
-                  <i class="fas fa-users" aria-hidden="true"></i>
-                  <span>Sobre</span>
-              </a>
-          </li>
-      </ul>
-  </nav>
-    <script src="/js/auto-fix.js"></script>
-
-<footer class="site-footer">
-    <section class="footer-inner-container">
-        
-        <nav class="footer-links-nav" aria-label="Navegação secundária do rodapé">
-            <ul>
-                <li><a href="/contato">Contato</a></li>
-                <li><a href="/quem-somos">Quem somos?</a></li>
-                <li><a href="/projetos">Projetos</a></li>
-                <li class="auth-stacked-item">
-                    <a href="/cadastro" class="main-auth-link">Cadastro</a>
-                    <a href="/login" class="sub-auth-link">Login</a>
-                </li>
-            </ul>
-        </nav>
-
-        <article class="footer-identity-block">
-            <figure class="brand-footer-wrapper">
-                <img src="/images/logotipo.png" alt="Logotipo Hydria">
-                <figcaption>HYDRIA</figcaption>
-            </figure>
-            
-            <nav class="footer-social-media" aria-label="Redes sociais corporativas">
-                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            </nav>
-        </article>
-
-    </section>
-</footer>
-
-</body>
-</html>
+<%
+const pageTitle = 'Notícia 02 - Hydria';
+const newsTitle = 'Falta de água no Rio de Janeiro';
+const featuredImage = '/images/img-noticie02.jpg';
+const featuredAlt = 'Falta de água RJ';
+const sourceValue = 'Águas do Rio';
+const articleParagraphs = [
+  'Moradores da zona norte relataram interrupções no abastecimento e aumento da pressão sobre serviços emergenciais durante o período de calor intenso.',
+  'As equipes técnicas acompanham a situação e avaliam medidas para normalizar o fornecimento nos bairros mais afetados.',
+  'A recomendação aos consumidores é priorizar o uso essencial da água até que o sistema volte a operar com regularidade.'
+];
+const relatedNews = [
+  {
+    href: '/noticia03',
+    image: '/images/img-noticie03.jpg',
+    alt: 'Fiscalização água mineral',
+    title: 'FISCALIZAÇÃO DE ÁGUA MINERAL',
+    excerpt: 'Fiscalização busca irregularidades e garante que padrões de qualidade sejam cumpridos pelos fornecedores...'
+  },
+  {
+    href: '/noticia04',
+    image: '/images/img-noticie04.png',
+    alt: 'Doenças infecciosas RS',
+    title: 'DOENÇAS INFECCIOSAS NO RIO GRANDE DO SUL',
+    excerpt: 'Relatório aponta possíveis cenários e recomendações para reduzir a transmissão e o impacto sobre a população...'
+  },
+  {
+    href: '/noticia05',
+    image: '/images/img-noticie05.jpg',
+    alt: 'Comunidade de Tapanã',
+    title: 'COMUNIDADE DE TAPANÃ CRITICA OBRAS DA COP30 E FALTA DE SANEAMENTO BÁSICO',
+    excerpt: 'Líderes locais apontam lacunas de infraestrutura que agravam riscos à saúde e ao meio ambiente...'
+  }
+];
+%>
+<%- include('../partial/noticia-template', { pageTitle, newsTitle, featuredImage, featuredAlt, sourceValue, articleParagraphs, relatedNews }) %>

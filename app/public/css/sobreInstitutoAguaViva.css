@@ -11,6 +11,11 @@ body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
+/* Menu inferior: somente em telas menores */
+.bottom-navigation {
+    display: none;
+}
+
 .detalhes-projeto {
     background-color: #fff;
     max-width: 450px; /* Simulando largura mobile do protótipo */
@@ -571,6 +576,15 @@ body {
 
     .data-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bottom-navigation {
+        display: block;
+    }
+
+    /* Espaço extra antes do menu móvel fixo para dar 'respiro' à última seção */
+    .sertao-data {
+        padding-bottom: 96px;
     }
 }
 
